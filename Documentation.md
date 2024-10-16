@@ -1,16 +1,26 @@
-# Coding challenge backend developer
+Coding Challenge - Backend Developer
 
-Lo scopo del challenge è di implementare delle REST API per la creazione e il retrieval degli users.
+L'obiettivo di questo challenge è implementare delle API REST per la creazione e il recupero degli utenti.
 
 [Installazione]
-Come prima cosa ho fatto tutte le installazioni necessarie per poter avere un ambiente di sviluppo per portare a termine il challenge. Ho installato serverless, serverless-wsgi, serverless-python-requirements con npm dopodichè sono passato all' installazione di Flask da utilizzare all'interno del file app.py per facilitare la creazione delle REST API.
-Una volta fatto "serverless login", con il comando "serverless" ho creato un nuovo progetto e ci ho collegato il mio account di AWS.
-Ho creato il file 'serverless.yml' per la configurazione e la creazione di risorse sull'ambiente di AWS.
-Una volta completata la parte di coding ho deployato il pacchetto e fatto dei test con PostMan per le request di tipo GET e POST.
+
+Per iniziare, ho configurato l'ambiente di sviluppo necessario per completare il challenge. Ho installato i seguenti pacchetti utilizzando npm:
+
+- serverless
+- serverless-wsgi
+- serverless-python-requirements
+
+Successivamente, ho installato Flask per facilitare la creazione delle API REST all'interno del file app.py.
+
+Dopo aver effettuato il login con il comando serverless login, ho creato un nuovo progetto con il comando serverless e l'ho collegato al mio account AWS. 
+Ho configurato il file serverless.yml per gestire la configurazione e la creazione delle risorse nell'ambiente AWS.
+
+Completata la fase di sviluppo, ho eseguito il deployment del pacchetto su AWS e testato le API con Postman, verificando il corretto funzionamento delle richieste di tipo GET e POST.
 
 [Funzionalità]
-All'interno di app.py ho creato due funzioni:
-- get_user_by_id (per il retrieval di un utente)
-    dato un id passato come parametro della funzione, andiamo a prendere un utente se esiste. Nel caso in cui esiste, lo ritorniamo, altrimenti la risposta conterrà una stringa che indicherà che l'utente non è presente nel database.
-- create_user (per la creazione di un utente)
-    creiamo un utente con id generato con la libreria uuid dopodichè lo inseriamo nel database.
+
+Nel file app.py ho implementato due funzioni:
+
+- get_user_by_id (recupero utente): Questa funzione permette di recuperare un utente specifico in base all'ID passato come parametro. Se l'utente esiste nel database, viene restituito; in caso contrario, la risposta conterrà un messaggio indicante che l'utente non è presente nel database.
+
+- create_user (creazione utente): Questa funzione consente di creare un nuovo utente, generando un ID univoco utilizzando la libreria uuid. Una volta generato l'ID, l'utente viene inserito nel database.
